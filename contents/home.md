@@ -1,17 +1,21 @@
 
 
-[![senli1073](https://img.shields.io/badge/senli1073-github-blue?logo=github)](https://github.com/senli1073)
+[![cejasmau](https://img.shields.io/badge/cejasmau-github-blue?logo=github)](https://github.com/cejasmau)
 
-He is currently a Fellow in the Department of Earth and Planetary Sciences (EPS) at Harvard University.
+Economist specialized in data science and budget analysis.
 
 #### Contact
 
-Email: user[at]fas.harvard.edu
+Email: mcejasmarcovecchio@gmail.com
 
 #### Education
-M.E., Computer Science and Technology, China University of Mining and Technology, 2022—2025.\
-B.E., Data Science and Big Data Technology, China University of Mining and Technology, 2018—2022.
 
-#### Research Interests
-Machine Learning for Seismology; Foundation Model; Observational Seismology; Microseismic Monitoring
+Master’s Degree Candidate in Data Science, University of Arturo Jauretche, 2025-Present.\
+Diploma in Data Analysis, University of Guillermo Brown, 2023.\
+Diploma in Public Financial Management with a Focus on Results, University of San Martín, 2023\
+Bachelor’s Degree in Economics, University of Buenos Aires, 2011-2017.
 
+#### Languages
+
+Spanish: Native\
+English: Certificate in Advanced English (2010), First Certificate in English (2008), Preliminary English Test (2006)

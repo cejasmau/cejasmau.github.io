@@ -1,0 +1,8 @@
+- Languages: *Python (pandas, NumPy, scikit-learn) · R · SQL* 
+- ML / IA: *Regression · Classification · Clustering · Time Series*
+- MLOps: *Docker*
+- Cloud: *AWS · GCP*
+- Big Data: *Apache Spark · Kafka* 
+- Visualization: *Matplotlib · Seaborn · Plotly · Looker* 
+- Database: *MySQL · MongoDB*
+- Tools: *Git · GitHub · VS Code · RStudio · Positron · Jupyter · Linux / Bash · Quarto*
