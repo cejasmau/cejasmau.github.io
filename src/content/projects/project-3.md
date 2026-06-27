@@ -9,6 +9,8 @@ seo:
     alt: Vista previa del proyecto
 ---
 
+![Portada modificada a blanco y negro.](../../assets/images/project-3.jpg)
+
 ## Resumen del proyecto
 
 La política de integración sociourbana de barrios populares implementada en la Argentina por la Secretaría de Integración Socio Urbana (SISU) del Ministerio de Desarrollo Social de la Nación, marca un cambio de paradigma en las políticas públicas desplegadas en los barrios populares, puesto que se propuso un objetivo muy ambicioso: lograr la integración sociourbana de la totalidad de los barrios populares del país. Con el punto de partida del relevamiento de información básica, a través del Registro Nacional de Barrios Populares (ReNaBaP) realizado en 2016 y la Ley de Barrios Populares (Nº 27.453) se pudo avanzar en políticas que implicaron la planificación y el reordenamiento territorial. 
