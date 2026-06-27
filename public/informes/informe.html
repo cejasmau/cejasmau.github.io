@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salarios Reales en Argentina · 2016–2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ── Reset & Base ─────────────────────────────────────────── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #32A456;
+      --green-dark: #298447;
+      --green-light: #4BC66E;
+      --red: #BF242A;
+      --gold: #EDB720;
+      --orange: #E26E20;
+      --celeste: #0092D0;
+      --blue: #0C45AA;
+      --violet: #6628AD;
+
+      --bg: #F4F1EB;
+      --bg-card: #FDFCFA;
+      --text: #1A1C1A;
+      --text-muted: #5C6058;
+      --text-faint: #9A9E96;
+      --border: #DDD9D0;
+      --border-light: #EDEAE3;
+
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+      --space: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Typography ───────────────────────────────────────────── */
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    h2.section-title {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+    }
+
+    h3.step-title {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+
+    p.lead {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      max-width: 52ch;
+    }
+
+    p.body-text {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+    }
+
+    /* ── Layout utilities ─────────────────────────────────────── */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 5vw, 3rem);
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    /* ── Navigation dots ──────────────────────────────────────── */
+    #nav-dots {
+      position: fixed;
+      right: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .nav-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .nav-dot.active {
+      background: var(--green);
+      transform: scale(1.4);
+    }
+
+    /* ── HERO ─────────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem clamp(1.25rem, 5vw, 3rem) 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .hero-meta {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-org {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .hero-org-logo {
+      height: 52px;
+      width: auto;
+      flex-shrink: 0;
+    }
+
+    .hero-org-names {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .hero-org-name-main {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--green-dark);
+      line-height: 1.3;
+    }
+
+    .hero-org-name-sub {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--text-muted);
+      line-height: 1.3;
+    }
+
+    .hero-period {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-align: left;
+      padding-top: 2px;
+    }
+
+    .hero-text {
+      max-width: 720px;
+      margin-bottom: 2rem;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--green-dark);
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-top: 1.25rem;
+      max-width: 64ch;
+      line-height: 1.75;
+    }
+
+    .hero-scroll-cue {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-faint);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    .scroll-arrow {
+      width: 20px;
+      height: 20px;
+      border-right: 1.5px solid var(--text-faint);
+      border-bottom: 1.5px solid var(--text-faint);
+      transform: rotate(45deg);
+      margin-top: 4px;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateX(-50%) translateY(0);
+      }
+
+      50% {
+        transform: translateX(-50%) translateY(8px);
+      }
+    }
+
+    /* ── Section intro block ──────────────────────────────────── */
+    .section-intro {
+      padding: 5rem clamp(1.25rem, 5vw, 3rem);
+      max-width: 1200px;
+      margin: 0 auto;
+      border-top: 2px solid var(--green);
+    }
+
+    .section-number {
+      font-family: var(--serif);
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--border);
+      line-height: 1;
+      margin-bottom: -0.5rem;
+      display: block;
+    }
+
+    /* ── Scrollytelling sections ──────────────────────────────── */
+    .scroll-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 5vw, 3rem);
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .scroll-section.reverse {
+      direction: rtl;
+    }
+
+    .scroll-section.reverse>* {
+      direction: ltr;
+    }
+
+    .scroll-narrative {
+      padding-top: 3rem;
+      padding-bottom: 15rem;
+    }
+
+    .scroll-graphic {
+      position: sticky;
+      top: 5vh;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .chart-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      padding: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .chart-title {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-bottom: 0.25rem;
+    }
+
+    .chart-subtitle {
+      font-family: var(--sans);
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .chart-svg-wrap {
+      width: 100%;
+      height: 340px;
+      position: relative;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 1rem;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── Narrative step cards ─────────────────────────────────── */
+    .step {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      padding: 2rem 0;
+      opacity: 0.35;
+      transition: opacity 0.5s;
+    }
+
+    .step.active {
+      opacity: 1;
+    }
+
+    .step-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-left: 3px solid var(--green);
+      border-radius: 0 6px 6px 0;
+      padding: 1.5rem 1.75rem;
+      max-width: 420px;
+    }
+
+    .step-card.accent-red {
+      border-left-color: var(--red);
+    }
+
+    .step-card.accent-gold {
+      border-left-color: var(--gold);
+    }
+
+    .step-card.accent-blue {
+      border-left-color: var(--blue);
+    }
+
+    .step-card.accent-celeste {
+      border-left-color: var(--celeste);
+    }
+
+    .step-stat {
+      font-family: var(--serif);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+
+    .step-stat.red {
+      color: var(--red);
+    }
+
+    .step-stat.gold {
+      color: var(--gold);
+    }
+
+    .step-stat.blue {
+      color: var(--blue);
+    }
+
+    .step-stat.celeste {
+      color: var(--celeste);
+    }
+
+    /* ── Footer / methodology ─────────────────────────────────── */
+    footer {
+      background: var(--text);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 3rem clamp(1.25rem, 5vw, 3rem);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+    }
+
+    footer h4 {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 0.75rem;
+    }
+
+    footer p {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    footer strong {
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 500;
+    }
+
+    /* ── D3 chart styles ──────────────────────────────────────── */
+    .axis text {
+      font-family: var(--sans);
+      fill: var(--text-faint);
+      font-size: 11px;
+    }
+
+    .axis path,
+    .axis line {
+      stroke: var(--border);
+    }
+
+    .grid line {
+      stroke: var(--border-light);
+      stroke-dasharray: 2 4;
+    }
+
+    .grid path {
+      display: none;
+    }
+
+    .baseline-rule {
+      stroke: var(--border);
+      stroke-width: 1;
+      stroke-dasharray: 4 4;
+    }
+
+    /* Annotation tooltips */
+    .annotation-box {
+      font-family: var(--sans);
+      font-size: 11px;
+    }
+
+    /* ── Intro chart section ──────────────────────────────────── */
+    .intro-chart-section {
+      padding: 4rem clamp(1.25rem, 5vw, 3rem);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .intro-chart-section .chart-svg-wrap {
+      height: 380px;
+    }
+
+    /* ── Responsive · tablet & mobile ────────────────────────── */
+    @media (max-width: 768px) {
+
+      /* Single-column layout */
+      .scroll-section {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      /* For reversed sections the chart is 2nd in DOM order;
+         bring it first visually on mobile */
+      .scroll-section.reverse {
+        direction: ltr;
+      }
+      .scroll-section.reverse .scroll-graphic {
+        order: -1;
+      }
+
+      /* Sticky compact chart — stays pinned while user reads steps */
+      .scroll-graphic {
+        position: sticky;
+        top: 0;
+        height: auto;
+        justify-content: flex-start;
+        background: var(--bg);
+        z-index: 10;
+        /* bleed to section edges and re-pad for visual continuity */
+        margin-left: calc(-1 * clamp(1.25rem, 5vw, 3rem));
+        margin-right: calc(-1 * clamp(1.25rem, 5vw, 3rem));
+        padding: 0.75rem clamp(1.25rem, 5vw, 3rem) 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      }
+
+      /* Shorter chart canvas on mobile */
+      .chart-svg-wrap {
+        height: 220px;
+      }
+
+      /* Less vertical breathing room for steps */
+      .step {
+        min-height: 44vh;
+        padding: 1.25rem 0;
+      }
+
+      .step-card {
+        max-width: 100%;
+      }
+
+      /* Narrative below the sticky chart */
+      .scroll-narrative {
+        padding-top: 1.5rem;
+        padding-bottom: 5rem;
+      }
+
+      /* Tighter section intros */
+      .section-intro {
+        padding: 3rem clamp(1.25rem, 5vw, 2rem) 2rem;
+      }
+
+      .intro-chart-section {
+        padding: 2.5rem clamp(1.25rem, 5vw, 2rem);
+      }
+
+      .intro-chart-section .chart-svg-wrap {
+        height: 260px;
+      }
+
+      /* Hide desktop nav dots */
+      #nav-dots {
+        display: none;
+      }
+
+      /* Footer stacks */
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    /* ── Small phones (≤ 480px) ───────────────────────────────── */
+    @media (max-width: 480px) {
+      #hero {
+        padding: 3rem 1.25rem 2rem;
+        min-height: auto;
+      }
+
+      .chart-svg-wrap {
+        height: 195px;
+      }
+
+      .step-stat {
+        font-size: 2rem;
+      }
+
+      .step-card {
+        padding: 1.25rem 1.25rem;
+      }
+
+      .section-intro {
+        padding: 2.5rem 1.25rem 1.5rem;
+      }
+
+      /* Axis labels can crowd on tiny screens — shrink slightly */
+      .axis text {
+        font-size: 9px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
+    /* ── Interactive Tooltip ──────────────────────────────────── */
+    .chart-tooltip {
+      position: absolute;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 9px 12px;
+      font-size: 11px;
+      pointer-events: none;
+      z-index: 30;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+      min-width: 138px;
+      opacity: 0;
+      transition: opacity 0.08s ease;
+    }
+
+    .tt-date {
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 5px;
+      font-size: 12px;
+      font-family: var(--serif);
+    }
+
+    .tt-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 3px;
+      line-height: 1.4;
+    }
+
+    .tt-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .tt-label {
+      color: var(--text-muted);
+      flex: 1;
+    }
+
+    .tt-val {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* ── Chart SVG overflow for end labels ─────────────────────── */
+    .chart-svg-wrap svg {
+      overflow: visible;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── Navigation dots ────────────────────────────── -->
+  <nav id="nav-dots" aria-label="Navegación por secciones">
+    <a class="nav-dot active" href="#hero" data-section="hero" title="Inicio"></a>
+    <a class="nav-dot" href="#s1" data-section="s1" title="Panorama general"></a>
+    <a class="nav-dot" href="#s2" data-section="s2" title="Público vs. privado"></a>
+    <a class="nav-dot" href="#s3" data-section="s3" title="Empleo informal"></a>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- HERO                                                   -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-meta">
+      <div class="hero-org">
+        <img class="hero-org-logo"
+          src="data:image/png;base64,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"
+          alt="Logo OCEPP">
+        <div class="hero-org-names">
+          <span class="hero-org-name-main">Observatorio de Coyuntura Económica y Políticas Públicas</span>
+          <span class="hero-org-name-sub">Fundación para el Desarrollo Humano Integral</span>
+          <span class="hero-period">Junio, 2026</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-text">
+      <h1>Recomposición del salario real<br>en abril tras <em>7 meses de caída</em></h1>
+      <p class="hero-sub">
+        El salario real promedio del sector privado registrado subió 1,4%, mientras el del sector público cayó 0,2%,
+        respecto del mes previo, con retrocesos interanuales de 2,3% y 2%, respectivamente.
+        Corta una racha de 7 meses consecutivos de caída.
+      </p>
+    </div>
+
+    <div class="hero-scroll-cue" aria-hidden="true">
+      <span>Desplazarse</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- INTRO CHART · Panorama histórico                      -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div class="intro-chart-section">
+    <p class="eyebrow">Contexto histórico</p>
+    <h2 class="section-title" style="margin-bottom:0.5rem">Evolución del salario real</h2>
+    <p class="lead" style="margin-bottom:1.75rem;max-width:68ch">
+      Trayectoria del salario real por sector de empleo, expresado en pesos constantes.
+    </p>
+    <div class="chart-card">
+      <p class="chart-title">Gráfico 1. Salario real por sector</p>
+      <p class="chart-subtitle">Base noviembre de 2023 = 100</p>
+      <div class="chart-svg-wrap" id="intro-chart"></div>
+      <div class="legend">
+        <span class="legend-item">
+          <span class="legend-dot" style="background:var(--green)"></span>
+          Total registrado
+        </span>
+        <span class="legend-item">
+          <span class="legend-dot" style="background:var(--blue)"></span>
+          Privado registrado
+        </span>
+        <span class="legend-item">
+          <span class="legend-dot" style="background:var(--gold)"></span>
+          Público registrado
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- SECTION 1 · Panorama general                          -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div class="section-intro" id="s1-intro">
+    <span class="section-number" aria-hidden="true">01</span>
+    <h2 class="section-title">Salario Privado Registrado</h2>
+    <p class="lead">
+      La suba observada en abril de 2026 pone un freno a la tendencia iniciada en septiembre del año pasado.
+    </p>
+  </div>
+
+  <div class="scroll-section" id="s1">
+    <!-- Sticky chart: left -->
+    <div class="scroll-graphic">
+      <div class="chart-card">
+        <p class="chart-title">Gráfico 2. Salario privado registrado</p>
+        <p class="chart-subtitle">Base noviembre 2023 = 100</p>        
+        <div class="chart-svg-wrap" id="s1-chart"></div>
+        <div class="legend">
+          <span class="legend-item">
+            <span class="legend-dot" style="background:var(--green)"></span>
+            Total registrado
+          </span>
+          <span class="legend-item" id="leg-priv" style="display:none">
+            <span class="legend-dot" style="background:var(--blue)"></span>
+            Privado registrado
+          </span>
+          <span class="legend-item" id="leg-pub" style="display:none">
+            <span class="legend-dot" style="background:var(--gold)"></span>
+            Público registrado
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scrolling narrative: right -->
+    <div class="scroll-narrative">
+
+      <div class="step" id="s1-step1" data-chart="s1" data-state="caida7m">
+        <div class="step-card accent-red">
+          <p class="body-text"
+            style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem">
+            Tendencia Negativa</p>
+          <span class="step-stat red">−3,5%</span>
+          <h3 class="step-title">7 meses consecutivos de caída</h3>
+          <p class="body-text">
+            Desde septiembre de 2025, el salario real en el sector privado registrado experimentó un deterioro
+            sostenido. Durante este período, el poder adquisitivo acumuló una contracción del 3,5%, reflejando el
+            impacto de la inflación y las políticas de ajuste sobre los ingresos formales.
+          </p>
+        </div>
+      </div>
+
+      <div class="step" id="s1-step2" data-chart="s1" data-state="suba_abr">
+        <div class="step-card">
+          <p class="body-text"
+            style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:.5rem">
+            Rebote</p>
+          <span class="step-stat" style="color:var(--green)">Abril 2026</span>
+          <h3 class="step-title">Freno a la caída</h3>
+          <p class="body-text">
+            La suba observada en abril de 2026 pone un freno a la tendencia iniciada en septiembre del año pasado. Este
+            incremento representa la primera recuperación tras la racha negativa de 7 meses en el sector privado
+            registrado.
+          </p>
+        </div>
+      </div>
+
+    </div><!-- /scroll-narrative -->
+  </div><!-- /scroll-section s1 -->
+
+  <hr class="divider">
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- SECTION 2 · Público vs. privado                       -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div class="section-intro" id="s2-intro">
+    <span class="section-number" aria-hidden="true">02</span>
+    <h2 class="section-title">Gráfico 3. Salario público registrado</h2>
+    <p class="lead">
+      El sector público fue el más golpeado en la era Milei, con una caída acumulada de 17,2% en el salario real entre
+      diciembre de 2023 y abril de 2026.
+    </p>
+  </div>
+
+  <div class="scroll-section reverse" id="s2">
+    <!-- Scrolling narrative: right (visualmente izquierda por el reverse) -->
+    <div class="scroll-narrative">
+
+      <div class="step" id="s2-step1" data-chart="s2" data-state="pub-golpeado">
+        <div class="step-card accent-gold">
+          <p class="body-text"
+            style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem">
+            El más afectado</p>
+          <span class="step-stat gold">−17,2%</span>
+          <h3 class="step-title">El sector público, el gran perdedor</h3>
+          <p class="body-text">
+            Durante la actual administración, el empleo estatal sufrió el mayor recorte en términos reales. Entre
+            diciembre de 2023 y abril de 2026, el salario real de los empleados públicos acumuló una caída del 17,2%,
+            ensanchando la brecha con el sector privado.
+          </p>
+        </div>
+      </div>
+
+    </div><!-- /scroll-narrative -->
+
+    <!-- Sticky chart: right (visualmente izquierda por el reverse) -->
+    <div class="scroll-graphic">
+      <div class="chart-card">
+        <p class="chart-title">Gráfico 3. Salario público registrado</p>
+        <p class="chart-subtitle">Base noviembre 2023 = 100</p>
+        <div class="chart-svg-wrap" id="s2-chart"></div>
+        <div class="legend">
+          <span class="legend-item">
+            <span class="legend-dot" style="background:var(--blue)"></span>
+            Privado registrado
+          </span>
+          <span class="legend-item">
+            <span class="legend-dot" style="background:var(--gold)"></span>
+            Público
+          </span>
+        </div>
+      </div>
+    </div>
+  </div><!-- /scroll-section s2 -->
+
+  <hr class="divider">
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- SECTION 3 · Empleo informal                           -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div class="section-intro" id="s3-intro">
+    <span class="section-number" aria-hidden="true">03</span>
+    <h2 class="section-title">El trabajo informal: el otro lado</h2>
+    <p class="lead">
+      El salario del sector privado no registrado continúa mostrando un llamativo desacople del resto de los sectores,
+      con fuertes incrementos tanto en la medición mensual como en la interanual.
+    </p>
+  </div>
+
+  <div class="scroll-section" id="s3">
+    <!-- Sticky chart: left -->
+    <div class="scroll-graphic">
+      <div class="chart-card">
+        <p class="chart-title">Gráfico 4. Salario privado no registrado</p>
+        <p class="chart-subtitle">Base noviembre 2023 = 100</p>
+        <div class="chart-svg-wrap" id="s3-chart"></div>
+        <div class="legend">
+          <span class="legend-item">
+            <span class="legend-dot" style="background:var(--blue)"></span>
+            Privado registrado
+          </span>
+          <span class="legend-item">
+            <span class="legend-dot" style="background:var(--red)"></span>
+            Privado no registrado
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scrolling narrative: right -->
+    <div class="scroll-narrative">
+
+      <div class="step" id="s3-step1" data-chart="s3" data-state="desacople">
+        <div class="step-card accent-celeste">
+          <p class="body-text"
+            style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--celeste);margin-bottom:.5rem">
+            Atípico</p>
+          <span class="step-stat celeste">+28,1% i.a.</span>
+          <h3 class="step-title">El llamativo desacople informal</h3>
+          <p class="body-text">
+            A contramano del estancamiento o caída en los sectores formales, el salario del sector privado no registrado
+            presenta un incremento del 2,1% mensual en abril de 2026 y un salto del 28,1% interanual, mostrando una
+            recuperación atípica.
+          </p>
+        </div>
+      </div>
+
+    </div><!-- /scroll-narrative -->
+  </div><!-- /scroll-section s3 -->
+
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- FOOTER / Metodología                                  -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <h4>Nota metodológica</h4>
+        <p>
+          Los gráficos presentados miden el ïndice de Salarios deflactado
+          por el Índice de Precios al Consumidor (IPC) de la República Argentina.
+          La base de indexación es <strong>noviembre de 2023 = 100</strong>.
+        </p>
+      </div>
+      <div>
+        <h4>Fuentes</h4>
+        <p>Ministerio de Economía · INDEC · OCEPP</p>
+        <p style="margin-top:.75rem">
+          <strong>Elaboración propia</strong><br>
+          Mauro Cejas Marcovecchio<br>
+          Visualización: D3.js v7<br>
+          Período: dic. 2016 – abr. 2026
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── Scripts ──────────────────────────────────────────── -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <script>
+    // ── DATA ────────────────────────────────────────────────────────────────────
+    const rawData = [
+      ["2016-12", 121.47, 128.15, 123.86, 201.08, 134.17],
+      ["2017-01", 123.51, 126.50, 124.64, 195.61, 134.11],
+      ["2017-02", 122.60, 124.42, 123.28, 197.10, 133.16],
+      ["2017-03", 121.61, 126.44, 123.33, 202.19, 133.84],
+      ["2017-04", 122.27, 127.21, 124.03, 204.86, 134.82],
+      ["2017-05", 123.07, 127.18, 124.53, 204.19, 135.12],
+      ["2017-06", 123.75, 129.06, 125.67, 202.51, 136.00],
+      ["2017-07", 127.38, 130.31, 128.45, 206.66, 138.89],
+      ["2017-08", 127.46, 131.76, 128.96, 212.91, 140.24],
+      ["2017-09", 126.48, 131.85, 128.40, 211.58, 139.50],
+      ["2017-10", 126.75, 132.06, 128.68, 209.70, 139.48],
+      ["2017-11", 126.83, 131.66, 128.58, 212.56, 139.79],
+      ["2017-12", 123.91, 128.25, 125.53, 211.86, 137.00],
+      ["2018-01", 123.90, 126.62, 124.88, 209.57, 136.17],
+      ["2018-02", 121.86, 124.37, 122.74, 206.98, 134.03],
+      ["2018-03", 120.80, 125.05, 122.33, 205.97, 133.46],
+      ["2018-04", 121.67, 123.50, 122.37, 205.10, 133.38],
+      ["2018-05", 122.19, 122.99, 122.42, 199.17, 132.66],
+      ["2018-06", 119.43, 120.13, 119.69, 189.73, 128.98],
+      ["2018-07", 118.52, 119.86, 119.07, 189.36, 128.42],
+      ["2018-08", 117.36, 118.85, 117.88, 186.93, 127.15],
+      ["2018-09", 112.76, 115.45, 113.74, 181.64, 122.77],
+      ["2018-10", 111.13, 114.65, 112.36, 175.26, 120.77],
+      ["2018-11", 110.49, 113.37, 111.54, 178.90, 120.49],
+      ["2018-12", 109.46, 113.19, 110.79, 182.48, 120.32],
+      ["2019-01", 110.14, 112.87, 111.13, 182.10, 120.60],
+      ["2019-02", 109.05, 111.54, 109.94, 179.90, 119.24],
+      ["2019-03", 107.90, 112.39, 109.48, 176.50, 118.41],
+      ["2019-04", 107.19, 110.81, 108.49, 172.72, 117.04],
+      ["2019-05", 108.42, 110.10, 109.02, 167.16, 116.79],
+      ["2019-06", 108.36, 109.44, 108.73, 163.13, 115.99],
+      ["2019-07", 110.57, 113.74, 111.71, 165.26, 118.85],
+      ["2019-08", 109.33, 111.35, 110.03, 163.05, 117.11],
+      ["2019-09", 105.95, 108.91, 107.01, 156.14, 113.59],
+      ["2019-10", 106.43, 108.62, 107.21, 154.26, 113.48],
+      ["2019-11", 104.95, 106.00, 105.33, 151.34, 111.45],
+      ["2019-12", 102.68, 105.14, 103.58, 153.66, 110.25],
+      ["2020-01", 109.00, 105.62, 107.79, 156.52, 114.30],
+      ["2020-02", 111.78, 106.48, 109.88, 158.27, 116.35],
+      ["2020-03", 110.63, 107.33, 109.44, 158.44, 115.99],
+      ["2020-04", 108.76, 106.34, 107.93, 157.21, 114.48],
+      ["2020-05", 106.87, 105.27, 106.28, 154.07, 112.65],
+      ["2020-06", 104.63, 103.85, 104.35, 152.91, 110.86],
+      ["2020-07", 104.02, 102.99, 103.66, 156.43, 110.71],
+      ["2020-08", 103.34, 101.05, 102.54, 157.97, 109.92],
+      ["2020-09", 102.69, 101.42, 102.23, 157.24, 109.58],
+      ["2020-10", 104.26, 100.79, 103.00, 154.76, 109.90],
+      ["2020-11", 103.73, 99.47, 102.20, 161.23, 110.07],
+      ["2020-12", 101.34, 97.94, 100.10, 156.93, 107.69],
+      ["2021-01", 101.32, 96.41, 99.55, 154.52, 106.88],
+      ["2021-02", 102.83, 96.62, 100.60, 153.38, 107.67],
+      ["2021-03", 102.01, 99.16, 100.99, 152.60, 107.88],
+      ["2021-04", 102.64, 96.73, 100.53, 148.72, 106.95],
+      ["2021-05", 102.86, 96.33, 100.51, 145.29, 106.48],
+      ["2021-06", 101.45, 97.12, 99.88, 142.43, 105.58],
+      ["2021-07", 103.57, 99.97, 102.27, 141.61, 107.53],
+      ["2021-08", 104.45, 100.72, 103.12, 141.71, 108.27],
+      ["2021-09", 104.51, 103.74, 104.24, 138.00, 108.73],
+      ["2021-10", 104.71, 103.87, 104.40, 140.85, 109.28],
+      ["2021-11", 106.70, 104.08, 105.77, 143.36, 110.78],
+      ["2021-12", 104.22, 102.93, 103.77, 146.11, 109.41],
+      ["2022-01", 105.01, 101.98, 103.92, 144.25, 109.31],
+      ["2022-02", 104.18, 99.72, 102.57, 140.77, 107.68],
+      ["2022-03", 102.89, 104.73, 103.55, 139.31, 108.33],
+      ["2022-04", 102.47, 101.40, 102.08, 140.65, 107.23],
+      ["2022-05", 104.35, 102.93, 103.84, 138.21, 108.42],
+      ["2022-06", 104.11, 102.25, 103.43, 137.28, 107.95],
+      ["2022-07", 102.14, 102.15, 102.14, 131.60, 106.08],
+      ["2022-08", 103.26, 99.55, 101.94, 129.68, 105.65],
+      ["2022-09", 102.93, 101.02, 102.24, 131.88, 106.20],
+      ["2022-10", 101.91, 100.67, 101.47, 127.89, 104.99],
+      ["2022-11", 104.26, 101.43, 103.25, 129.75, 106.79],
+      ["2022-12", 103.69, 105.33, 104.29, 124.09, 106.93],
+      ["2023-01", 102.29, 103.23, 102.63, 124.91, 105.60],
+      ["2023-02", 102.55, 100.54, 101.83, 125.46, 104.97],
+      ["2023-03", 102.74, 108.60, 104.85, 123.58, 107.34],
+      ["2023-04", 101.28, 104.26, 102.36, 119.53, 104.65],
+      ["2023-05", 101.63, 104.94, 102.82, 114.45, 104.38],
+      ["2023-06", 101.40, 105.01, 102.70, 116.13, 104.49],
+      ["2023-07", 105.63, 111.89, 107.88, 116.85, 109.08],
+      ["2023-08", 101.77, 105.49, 103.11, 112.79, 104.40],
+      ["2023-09", 102.20, 103.81, 102.78, 107.50, 103.41],
+      ["2023-10", 102.61, 104.61, 103.33, 104.12, 103.44],
+      ["2023-11", 100.00, 100.00, 100.00, 100.00, 100.00],
+      ["2023-12", 88.50, 84.09, 86.91, 85.79, 86.76],
+      ["2024-01", 88.04, 78.14, 84.48, 79.12, 83.76],
+      ["2024-02", 88.68, 79.42, 85.35, 73.86, 83.82],
+      ["2024-03", 87.87, 79.44, 84.83, 73.02, 83.26],
+      ["2024-04", 90.40, 78.48, 86.11, 72.31, 84.26],
+      ["2024-05", 93.43, 81.55, 89.16, 77.61, 87.61],
+      ["2024-06", 95.32, 81.06, 90.19, 81.05, 88.97],
+      ["2024-07", 97.38, 83.15, 92.26, 89.66, 91.91],
+      ["2024-08", 98.19, 83.53, 92.91, 95.17, 93.21],
+      ["2024-09", 98.47, 83.90, 93.23, 101.50, 94.33],
+      ["2024-10", 99.68, 85.24, 94.48, 106.41, 96.07],
+      ["2024-11", 100.51, 85.49, 95.10, 112.35, 97.41],
+      ["2024-12", 100.59, 84.67, 94.86, 116.87, 97.80],
+      ["2025-01", 100.68, 83.61, 94.54, 124.15, 98.49],
+      ["2025-02", 100.59, 85.29, 95.08, 130.85, 99.86],
+      ["2025-03", 99.07, 84.92, 93.98, 132.59, 99.13],
+      ["2025-04", 98.83, 84.50, 93.67, 138.91, 99.71],
+      ["2025-05", 99.29, 85.98, 94.50, 144.47, 101.17],
+      ["2025-06", 99.40, 85.69, 94.47, 154.82, 102.52],
+      ["2025-07", 99.67, 86.01, 94.75, 157.36, 103.11],
+      ["2025-08", 100.03, 86.78, 95.26, 163.79, 104.41],
+      ["2025-09", 99.34, 85.99, 94.53, 169.65, 104.56],
+      ["2025-10", 99.08, 85.61, 94.23, 172.79, 104.72],
+      ["2025-11", 98.75, 84.50, 93.62, 171.46, 104.01],
+      ["2025-12", 98.45, 82.97, 92.88, 166.95, 102.77],
+      ["2026-01", 97.73, 82.11, 92.11, 169.36, 102.42],
+      ["2026-02", 96.46, 81.66, 91.13, 172.20, 101.96],
+      ["2026-03", 95.22, 82.97, 90.82, 174.42, 101.98],
+      ["2026-04", 96.54, 82.77, 91.58, 178.00, 103.12]
+    ];
+
+    // Parse to objects
+    const data = rawData.map(d => ({
+      date: d3.timeParse("%Y-%m")(d[0]),
+      priv: d[1], pub: d[2], totReg: d[3], nr: d[4], tot: d[5]
+    }));
+
+    // ── Colors ────────────────────────────────────────────────────────────────
+    const C = {
+      green: "#32A456", greenDk: "#298447", red: "#BF242A",
+      gold: "#EDB720", blue: "#0C45AA", celeste: "#0092D0",
+      orange: "#E26E20", bg: "#F4F1EB", text: "#1A1C1A",
+      muted: "#5C6058", faint: "#9A9E96", border: "#DDD9D0", borderLt: "#EDEAE3"
+    };
+
+    // ── Chart factory ─────────────────────────────────────────────────────────
+    function makeChart(containerId, { yDomain, series, data: chartData = data } = {}) {
+      const el = document.getElementById(containerId);
+      if (!el) return null;
+      el.innerHTML = "";
+
+      const margin = { top: 20, right: 24, bottom: 36, left: 44 };
+      const W0 = el.clientWidth || 480;
+      const H0 = el.clientHeight || 340;
+      const W = W0 - margin.left - margin.right;
+      const H = H0 - margin.top - margin.bottom;
+
+      // Visibility state per series key
+      const vis = {};
+      series.forEach(s => { vis[s.key] = s.opacity !== undefined ? s.opacity > 0.3 : true; });
+
+      // Tooltip div (positioned relative to el which has position:relative)
+      const tt = d3.select(el).append("div").attr("class", "chart-tooltip");
+
+      // SVG
+      const svg = d3.select(el).append("svg")
+        .attr("width", W0).attr("height", H0)
+        .attr("role", "img")
+        .attr("aria-label", "Gráfico de evolución del salario real 2016-2026");
+
+      const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+      // Scales
+      const xScale = d3.scaleTime()
+        .domain(d3.extent(chartData, d => d.date))
+        .range([0, W]);
+
+      const computedY = yDomain || (() => {
+        const allVals = chartData.flatMap(d => series.map(s => d[s.key]));
+        return [d3.min(allVals) - 3, d3.max(allVals) + 3];
+      })();
+      const yScale = d3.scaleLinear().domain(computedY).range([H, 0]);
+
+      // Grid lines
+      g.append("g").attr("class", "grid")
+        .call(d3.axisLeft(yScale).tickSize(-W).tickFormat("").ticks(5));
+
+      // Fill group – renders BEHIND lines
+      const fillG = g.append("g").attr("class", "fill-group");
+
+      // Baseline 100
+      if (computedY[0] < 100 && computedY[1] > 96) {
+        g.append("line")
+          .attr("class", "baseline-rule")
+          .attr("x1", 0).attr("x2", W)
+          .attr("y1", yScale(100)).attr("y2", yScale(100))
+          .attr("stroke", C.muted).attr("stroke-width", 1)
+          .attr("stroke-dasharray", "4 4");
+      }
+
+      // Axes
+      g.append("g").attr("class", "axis")
+        .attr("transform", `translate(0,${H})`)
+        .call(d3.axisBottom(xScale)
+          .ticks(d3.timeYear.every(1))
+          .tickFormat(d3.timeFormat("%Y")));
+
+      g.append("g").attr("class", "axis")
+        .call(d3.axisLeft(yScale).ticks(5));
+
+      // Line paths with staggered draw animation
+      const paths = {};
+      series.forEach((s, i) => {
+        const lineGen = d3.line()
+          .x(d => xScale(d.date))
+          .y(d => yScale(d[s.key]))
+          .curve(d3.curveCatmullRom.alpha(0.5));
+
+        const path = g.append("path").datum(chartData)
+          .attr("fill", "none")
+          .attr("stroke", s.color)
+          .attr("stroke-width", s.width || 2)
+          .attr("opacity", s.opacity !== undefined ? s.opacity : 1)
+          .attr("d", lineGen);
+
+        // Draw animation
+        const len = path.node().getTotalLength();
+        path.attr("stroke-dasharray", `${len} ${len}`)
+          .attr("stroke-dashoffset", len)
+          .transition()
+          .delay(i * 320)
+          .duration(1600)
+          .ease(d3.easeCubicInOut)
+          .attr("stroke-dashoffset", 0);
+
+        paths[s.key] = { path, lineGen };
+      });
+
+      // Annotations group – renders ABOVE lines
+      const annG = g.append("g").attr("class", "annotations");
+
+      // ── Interactive crosshair ─────────────────────────────────────────────
+      const xhairLine = g.append("line")
+        .attr("y1", 0).attr("y2", H)
+        .attr("stroke", C.border).attr("stroke-width", 1)
+        .attr("stroke-dasharray", "3 3")
+        .style("opacity", 0).style("pointer-events", "none");
+
+      const xhairDots = series.map(s =>
+        g.append("circle").attr("r", 3.5)
+          .attr("fill", s.color).attr("stroke", "#fff").attr("stroke-width", 1.5)
+          .style("opacity", 0).style("pointer-events", "none")
+      );
+
+      const bisect = d3.bisector(d => d.date).left;
+
+      g.append("rect")
+        .attr("width", W).attr("height", H)
+        .attr("fill", "none").attr("pointer-events", "all")
+        .on("mousemove", function(event) {
+          const [mx, my] = d3.pointer(event);
+          const x0 = xScale.invert(mx);
+          const i = bisect(chartData, x0, 1);
+          const d0 = chartData[i - 1], d1 = chartData[i];
+          const d = !d1 ? d0 : (!d0 ? d1 :
+            (x0 - d0.date < d1.date - x0 ? d0 : d1));
+          if (!d) return;
+
+          const cx = xScale(d.date);
+          xhairLine.attr("x1", cx).attr("x2", cx).style("opacity", 1);
+
+          series.forEach((s, idx) => {
+            xhairDots[idx]
+              .attr("cx", cx).attr("cy", yScale(d[s.key]))
+              .style("opacity", vis[s.key] ? 1 : 0);
+          });
+
+          // Build tooltip HTML
+          const fmt = d3.timeFormat("%b. %Y");
+          let html = `<div class="tt-date">${fmt(d.date)}</div>`;
+          series.forEach(s => {
+            if (!vis[s.key]) return;
+            html += `<div class="tt-row">
+              <span class="tt-dot" style="background:${s.color}"></span>
+              <span class="tt-label">${s.label}</span>
+              <strong class="tt-val">${d[s.key].toFixed(1)}</strong>
+            </div>`;
+          });
+
+          // Position tooltip
+          const tipW = 168;
+          let tx = cx + margin.left + 12;
+          if (tx + tipW > W0) tx = cx + margin.left - tipW - 12;
+          let ty = my + margin.top - 40;
+          if (ty < 5) ty = 5;
+
+          tt.style("opacity", 1)
+            .style("left", tx + "px")
+            .style("top", ty + "px")
+            .html(html);
+        })
+        .on("mouseleave", function() {
+          xhairLine.style("opacity", 0);
+          xhairDots.forEach(dot => dot.style("opacity", 0));
+          tt.style("opacity", 0);
+        });
+
+      // ── Internal helper: pulsing dot ──────────────────────────────────────
+      function pulsingDot(cx, cy, color) {
+        const dg = annG.append("g").attr("class", "pulse-dot")
+          .attr("transform", `translate(${cx},${cy})`);
+
+        (function loop() {
+          if (!dg.node() || !dg.node().isConnected) return;
+          dg.append("circle")
+            .attr("r", 5).attr("fill", "none")
+            .attr("stroke", color).attr("stroke-width", 1.5).attr("opacity", 0.75)
+            .transition().duration(1350).ease(d3.easeLinear)
+            .attr("r", 20).attr("opacity", 0)
+            .on("end", function() { d3.select(this).remove(); loop(); });
+        })();
+
+        dg.append("circle").attr("r", 5).attr("fill", color)
+          .attr("opacity", 0)
+          .transition().duration(350).attr("opacity", 1);
+
+        return dg;
+      }
+
+      // ── Public API ────────────────────────────────────────────────────────
+      return {
+        xScale, yScale, W, H, annG, fillG, paths,
+
+        highlightRange(x0, x1, label, color = C.red, labelSide = "right") {
+          annG.selectAll(".hl-band").remove();
+          if (!x0) return;
+          const px0 = xScale(x0), px1 = xScale(x1 || x0);
+          annG.append("rect").attr("class", "hl-band")
+            .attr("x", px0).attr("y", 0)
+            .attr("width", px1 - px0).attr("height", H)
+            .attr("fill", color).attr("opacity", 0)
+            .transition().duration(600).attr("opacity", 0.13);
+
+          if (label) {
+            // "right" puts label just after the band; "inside" puts it near the left edge
+            const lx = labelSide === "right"
+              ? Math.min(px1 + 6, W - 4)
+              : px0 + 7;
+            annG.append("text").attr("class", "hl-band")
+              .attr("x", lx).attr("y", 20)
+              .attr("fill", color)
+              .attr("font-family", "'Inter', sans-serif")
+              .attr("font-size", 10).attr("font-weight", 600)
+              .attr("text-anchor", "start")
+              .attr("opacity", 0).text(label)
+              .transition().duration(500).delay(350).attr("opacity", 1);
+          }
+        },
+
+        clearHighlight() {
+          annG.selectAll(".hl-band").transition().duration(300).attr("opacity", 0).remove();
+        },
+
+        showFill(k1, k2, color) {
+          fillG.selectAll(".fill-area").remove();
+          if (!k1 || !k2) return;
+          const area = d3.area()
+            .x(d => xScale(d.date))
+            .y0(d => yScale(d[k1]))
+            .y1(d => yScale(d[k2]))
+            .curve(d3.curveCatmullRom.alpha(0.5));
+          fillG.append("path").datum(chartData)
+            .attr("class", "fill-area").attr("fill", color)
+            .attr("opacity", 0).attr("d", area)
+            .transition().duration(750).attr("opacity", 0.14);
+        },
+
+        clearFill() {
+          fillG.selectAll(".fill-area").transition().duration(300).attr("opacity", 0).remove();
+        },
+
+        addPulsingDot(key, dateStr, color) {
+          const d = chartData.find(d => d3.timeFormat("%Y-%m")(d.date) === dateStr);
+          if (!d) return;
+          return pulsingDot(xScale(d.date), yScale(d[key]), color);
+        },
+
+        clearDots() {
+          annG.selectAll(".pulse-dot").remove();
+        },
+
+        addEndLabel(key, text, color, yOff = -9) {
+          const ld = chartData[chartData.length - 1];
+          const x = xScale(ld.date);
+          const y = yScale(ld[key]) + yOff;
+          annG.append("text").attr("class", "end-label")
+            .attr("x", x).attr("y", y)
+            .attr("fill", color).attr("font-size", 11).attr("font-weight", 700)
+            .attr("font-family", "'Inter', sans-serif")
+            .attr("text-anchor", "end")
+            .attr("opacity", 0).text(text)
+            .transition().duration(600).delay(400).attr("opacity", 1);
+        },
+
+        clearLabels() {
+          annG.selectAll(".end-label").transition().duration(300).attr("opacity", 0).remove();
+        },
+
+        showSeries(keys, show = true) {
+          keys.forEach(k => { vis[k] = show; });
+          Object.entries(paths).forEach(([k, p]) => {
+            if (keys.includes(k)) {
+              // Named transition "vis" so it never cancels the draw animation
+              p.path.transition("vis").duration(500).attr("opacity", show ? 1 : 0.06);
+            }
+          });
+        }
+      };
+    }
+
+    // ── Intro chart (full period overview) ───────────────────────────────────
+    let chartIntro;
+    function initIntroChart() {
+      chartIntro = makeChart("intro-chart", {
+        data: data,          // full period: dic. 2016 – abr. 2026
+        yDomain: [68, 138],
+        series: [
+          { key: "totReg", color: C.green, width: 2.5, label: "Total registrado" },
+          { key: "priv",   color: C.blue,  width: 2,   label: "Privado reg." },
+          { key: "pub",    color: C.gold,  width: 2,   label: "Público reg." }
+        ]
+      });
+    }
+
+    // ── Section 1 chart ───────────────────────────────────────────────────────
+    let chart1;
+    function initS1Chart() {
+      const fd = data.filter(d => d.date >= d3.timeParse("%Y-%m")("2023-01"));
+      chart1 = makeChart("s1-chart", {
+        data: fd,
+        yDomain: [80, 115],
+        series: [
+          { key: "totReg", color: C.green,  width: 3,   label: "Total registrado" },
+          { key: "priv",   color: C.blue,   width: 1.5, opacity: 0, label: "Privado reg." },
+          { key: "pub",    color: C.gold,   width: 1.5, opacity: 0, label: "Público reg." }
+        ]
+      });
+    }
+
+    function updateS1(state) {
+      if (!chart1) return;
+      chart1.clearHighlight();
+      chart1.clearFill();
+      chart1.clearDots();
+      chart1.clearLabels();
+
+      const legPriv = document.getElementById("leg-priv");
+      const legPub  = document.getElementById("leg-pub");
+      if (legPriv) legPriv.style.display = "none";
+      if (legPub)  legPub.style.display  = "none";
+
+      const p = d3.timeParse("%Y-%m");
+
+      if (state === "caida7m") {
+        chart1.showSeries(["priv"], true);
+        chart1.showSeries(["totReg", "pub"], false);
+        chart1.highlightRange(p("2025-08"), p("2026-03"), "7 meses de caída", C.red, "inside");
+        // Pulsing markers at start and end of the decline
+        setTimeout(() => {
+          chart1.addPulsingDot("priv", "2025-09", C.red);
+          chart1.addPulsingDot("priv", "2026-03", C.red);
+        }, 500);
+
+      } else if (state === "suba_abr") {
+        chart1.showSeries(["priv"], true);
+        chart1.showSeries(["totReg", "pub"], false);
+        chart1.highlightRange(p("2026-03"), p("2026-04"), "Rebote Abr. 2026", C.green, "inside");
+        setTimeout(() => {
+          chart1.addPulsingDot("priv", "2026-04", C.green);
+        }, 500);
+      }
+    }
+
+    // ── Section 2 chart ───────────────────────────────────────────────────────
+    let chart2;
+    function initS2Chart() {
+      const fd = data.filter(d => d.date >= d3.timeParse("%Y-%m")("2023-01"));
+      chart2 = makeChart("s2-chart", {
+        data: fd,
+        yDomain: [70, 112],
+        series: [
+          { key: "priv", color: C.blue, width: 2.2, label: "Privado reg." },
+          { key: "pub",  color: C.gold, width: 2.2, label: "Público" }
+        ]
+      });
+    }
+
+    function updateS2(state) {
+      if (!chart2) return;
+      chart2.clearHighlight();
+      chart2.clearFill();
+      chart2.clearDots();
+      chart2.clearLabels();
+
+      const p = d3.timeParse("%Y-%m");
+
+      if (state === "pub-golpeado") {
+        chart2.showSeries(["priv", "pub"], true);
+        // Shaded region covering the whole Milei era
+        chart2.highlightRange(p("2023-11"), p("2026-04"), "Público −17,2%", C.gold, "inside");
+        // Area fill showing the growing gap
+        chart2.showFill("pub", "priv", C.gold);
+        // End-of-series value labels
+        chart2.addEndLabel("priv", "96,5", C.blue, -9);
+        chart2.addEndLabel("pub",  "82,8", C.gold, +14);
+        // Pulsing dot on the public sector's end point
+        setTimeout(() => {
+          chart2.addPulsingDot("pub", "2026-04", C.gold);
+        }, 600);
+      }
+    }
+
+    // ── Section 3 chart ───────────────────────────────────────────────────────
+    let chart3;
+    function initS3Chart() {
+      const fd = data; // full period: dic. 2016 – abr. 2026
+      chart3 = makeChart("s3-chart", {
+        data: fd,
+        yDomain: [68, 210],
+        series: [
+          { key: "priv", color: C.blue, width: 2,   label: "Privado reg." },
+          { key: "nr",   color: C.red,  width: 2.2, label: "No registrado" }
+        ]
+      });
+    }
+
+    function updateS3(state) {
+      if (!chart3) return;
+      chart3.clearHighlight();
+      chart3.clearFill();
+      chart3.clearDots();
+      chart3.clearLabels();
+
+      const p = d3.timeParse("%Y-%m");
+
+      if (state === "desacople") {
+        chart3.showSeries(["priv", "nr"], true);
+        // Highlight the interannual comparison window
+        chart3.highlightRange(p("2025-04"), p("2026-04"), "+28,1% i.a.", C.celeste, "inside");
+        // Area fill – growing divergence between registered and informal
+        chart3.showFill("nr", "priv", C.red);
+        // End-value labels
+        chart3.addEndLabel("nr",   "178,0", C.red,  -9);
+        chart3.addEndLabel("priv", "96,5",  C.blue, +14);
+        setTimeout(() => {
+          chart3.addPulsingDot("nr", "2026-04", C.red);
+        }, 600);
+      }
+    }
+
+    // ── Scrollytelling / IntersectionObserver ─────────────────────────────────
+    const stepObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const step = entry.target;
+        step.classList.add("active");
+
+        // Deactivate siblings
+        step.parentElement.querySelectorAll(".step").forEach(s => {
+          if (s !== step) s.classList.remove("active");
+        });
+
+        const chart = step.dataset.chart;
+        const state = step.dataset.state;
+        if (chart === "s1") updateS1(state);
+        if (chart === "s2") updateS2(state);
+        if (chart === "s3") updateS3(state);
+      });
+    }, { threshold: 0.55 });
+
+    // ── Section nav dots ──────────────────────────────────────────────────────
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const id = entry.target.id;
+        const dot = document.querySelector(`[data-section="${id}"]`);
+        if (dot) dot.classList.toggle("active", entry.isIntersecting);
+      });
+    }, { threshold: 0.3 });
+
+    // ── Init ──────────────────────────────────────────────────────────────────
+    window.addEventListener("DOMContentLoaded", () => {
+      initIntroChart();
+      initS1Chart();
+      initS2Chart();
+      initS3Chart();
+
+      // Observe step cards for scrollytelling
+      document.querySelectorAll(".step").forEach(el => stepObserver.observe(el));
+
+      // Observe section landmarks for nav dots
+      ["hero", "s1", "s2", "s3"].forEach(id => {
+        const el = document.getElementById(id) || document.getElementById(id + "-intro");
+        if (el) sectionObserver.observe(el);
+      });
+
+      // Mark first step of each section active
+      ["s1-step1", "s2-step1", "s3-step1"].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.add("active");
+      });
+
+      // Trigger initial chart states after draw animation has started
+      setTimeout(() => {
+        updateS1("caida7m");
+        updateS2("pub-golpeado");
+        updateS3("desacople");
+      }, 300);
+    });
+  </script>
+</body>
+
+</html>
