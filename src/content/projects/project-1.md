@@ -1,14 +1,14 @@
 ---
 title: 'Predicción de la radiación solar en la provincia de Corrientes, Argentina'
 description: Análisis exploratorio, procesamiento de datos y desarrollo de modelos de aprendizaje automático para la predicción de la radiación solar global en las localidades de Goya, Bella Vista y Herliszka, de la provincia de Corrientes.
-publishDate: '23 de febrero de 2026'
+publishDate: 'Feb 23 2026'
 seo:
   image:
     src: '../../assets/images/project-1.jpg'
     alt: Vista previa del proyecto
 ---
 
-![Por Evelyn Proimos – Flickr: Flying Over Esteros del Iberá: The kingdom of water, North-eastern Argentina, CC BY 4.0, https://www.flickr.com/photos/evelynproimos/[ID-de-la-foto]. Modificada a blanco y negro.](../../assets/images/project-1.jpg)
+![Por Evelyn Proimos – Flickr: Flying Over Esteros del Iberá: The kingdom of water, North-eastern Argentina, CC BY 4.0, https://www.flickr.com/photos/evelynproimos/. Modificada a blanco y negro.](../../assets/images/project-1.jpg)
 
 
 **Resumen del proyecto:**
