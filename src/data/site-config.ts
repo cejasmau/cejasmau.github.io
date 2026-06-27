@@ -9,7 +9,7 @@ const siteConfig: SiteConfig = {
     },
     title: 'Mauro Cejas Marcovecchio',
     subtitle: 'en las vidrieras no lo vas a encontrar',
-    description: 'Economía, ciencia de datos y otras yerbas.',
+    description: 'Economía, ciencia de datos y otras yerbas',
     image: {
         src: '/dante-preview.jpg',
         alt: 'Mauro Cejas Marcovecchio'
@@ -53,7 +53,7 @@ const siteConfig: SiteConfig = {
         }
     ],
     hero: {
-        title: 'Economía, ciencia de datos y otras yerbas.'
+        title: 'Economía, ciencia de datos y otras yerbas'
     },
     postsPerPage: 8,
     projectsPerPage: 8

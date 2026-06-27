@@ -1,43 +1,29 @@
 ---
-title: About
+title: Acerca de mí
 seo:
-  title: About Me
-  description: Learn more about the person behind the website and embark on a journey of inspiration and shared experiences.
+  title: Acerca de mí
+  description: Algunos datos sobre mí.
   image:
     src: '../../assets/images/about.jpg'
-    alt: A person sitting at a desk in front of a computer
+    alt: Una persona sacándole una foto a un atardecer.
 ---
 
-![Alt text for image](../../assets/images/about.jpg)
+![Chapadmalal, Argentina](../../assets/images/about.jpg)
 
-**Note!:** This about page is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
+## Mauro Cejas Marcovecchio - Economista viviendo en Buenos Aires
 
-## Ethan Donovan - Web Developer based in Estonia
+**Buenas!** Soy Mauro Cejas Marcovecchio, economista cipoleño con el privilegio de vivir en la [República Argentina](https://www.tiktok.com/@diario.ole/video/7585157395010080020). Profundamente interesado en comprender la sociedad en la que vivimos a través de los datos.
 
-**Greetings!** I'm Ethan Donovan, a passionate web developer residing in the picturesque landscapes of [Estonia](https://en.wikipedia.org/wiki/Estonia). With a keen eye for design and a love for crafting seamless digital experiences, I bring a unique blend of creativity and technical expertise to the world of web development.
+## Habilidades
 
-## Skills and Expertise
+Me especializo en ciencia de datos y análisis presupuestario. Intento combinar el detalle en la comprensión de los fenómenos que investigo con la simpleza en la narración y la claridad visual orientadas a la toma de decisiones basadas en evidencia. Programo habitualmente en **Python** y **R**, si bien los avances recientes en inteligencia artificial me han permitido incursionar en **Javascript**. He trabajado en contextos académicos con algoritmos de aprendizaje automático, principalmente en tareas de **Regresión**, **Clasificación**, **Clustering** y **Series temporales**. He tenido acercamientos a la computación en la nube mediante **AWS** y **GCP**, así como en el manejo de grandes volúmenes de datos a través de **Spark** y **Kafka**. Por último, en cuanto a la gestión de bases de datos, he empleado tanto sistemas relacionales (**MySQL**) como no relacionales (**MongoDB**).
 
-I specialize in front-end and back-end development, utilizing the latest technologies to build responsive and user-friendly websites. My proficiency includes **HTML**, **CSS**, **JavaScript**, and frameworks such as **Astro.js** for dynamic and interactive user interfaces. On the server side, I'm well-versed in Node.js and have experience with database management systems like MongoDB.
+## Aprendizaje
 
-## Innovation and Problem-Solving
+La dinámica de la industria tecnológica ha hecho que estar al tanto de las últimas tendencias y avances en la inteligencia artificial sea imprescindible. De todas formas, su uso representa un complemento para el conocimiento, no un sustituto. En ese sentido es que, durante los últimos años, he participado de diplomaturas de análisis de datos (UNAB), gestión financiera (UNSAM), cursos de Inteligencia Artificial (BID, Google) y actualmente estoy escribiendo mi tesis para la Maestría de ciencia de datos (UNAJ).
 
-I thrive on solving complex problems and transforming ideas into functional, elegant websites. Whether it's optimizing performance, implementing new features, or troubleshooting issues, I approach each challenge with enthusiasm and a commitment to delivering high-quality solutions.
+## Contactame
 
-## Global Perspective, Local Impact
+Si necesitás una mano con algún proyecto, tenés alguna consulta o simplemente querés intercambiar algunas ideas, no dudes en escribirme.
 
-Living in Estonia has not only influenced my appreciation for nature and culture but has also shaped my approach to web development. I understand the importance of creating digital solutions that resonate with local audiences while maintaining a global perspective.
-
-## Continuous Learning
-
-The dynamic nature of the tech industry inspires me to stay up-to-date with the latest trends and advancements. I'm always eager to expand my skill set and embrace emerging technologies that enhance the functionality and aesthetics of the websites I create.
-
-## Collaboration and Communication
-
-I believe in the power of collaboration and effective communication. Whether working with clients, designers, or fellow developers, I value clear communication to ensure the success of every project.
-
-## Get in Touch
-
-Are you looking to elevate your online presence or bring your digital ideas to life? I'd love to hear from you! Feel free to reach out for collaboration, consultation, or just a friendly chat about all things web development.
-
-_Let's build something amazing together!_
+_Un abrazo!_

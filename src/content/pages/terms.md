@@ -1,52 +1,53 @@
 ---
-title: Terms of Service
+title: Términos y Condiciones
 seo:
-  title: Terms of Service
-  description: Explore the terms and conditions of Dante website for a clear understanding of guidelines and responsibilities.
+  title: Términos y condiciones
+  description: Explorá los términos y condiciones del sitio web para un mejor entendimiento de las guías y responsabilidades.
 ---
 
-**Last updated on January 11, 2024**
+Términos y Condiciones
+**Última actualización: 25 de junio de 2026**
 
-These Terms of Service ("Terms") govern your access to and use of [Website Name] ("the Website") and any related services provided by [Website Owner/Company] ("we," "us," or "our"). Please read these Terms carefully before using the Website.
+Estos Términos y Condiciones (en adelante, los “Términos”) regulan el acceso y uso del sitio web [cejasmau.github.io] (“el Sitio”) y de cualquier servicio relacionado prestado por [Mauro Cejas Marcovecchio] (“nosotros”, “nos” o “nuestro”). Le rogamos que lea atentamente estos Términos antes de utilizar el Sitio.
 
-**1. Acceptance of Terms**
+**1. Aceptación de los Términos**
 
-By accessing or using the Website, you agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms or the Privacy Policy, please do not use the Website.
+El acceso o uso del Sitio implica la aceptación plena y sin reservas de estos Términos y de nuestra Política de Privacidad. Si no está de acuerdo con estos Términos o con la Política de Privacidad, le pedimos que no utilice el Sitio.
 
-**2. Changes to Terms**
+**2. Modificaciones de los Términos**
 
-We reserve the right to modify, amend, or update these Terms at any time. Such changes will be effective upon posting on the Website. It is your responsibility to review these Terms regularly. Your continued use of the Website after any changes indicates your acceptance of the revised Terms.
+Nos reservamos el derecho de modificar, enmendar o actualizar estos Términos en cualquier momento. Dichos cambios serán efectivos desde su publicación en el Sitio. Es su responsabilidad revisar periódicamente estos Términos. La utilización continuada del Sitio con posterioridad a cualquier modificación implica la aceptación de los Términos revisados.
 
-**3. Use of the Website**
+**3. Uso del Sitio**
 
-You agree to use the Website for lawful purposes and in a manner consistent with these Terms. You are responsible for any content you post or submit on the Website.
+Usted se obliga a utilizar el Sitio únicamente para fines lícitos y de conformidad con estos Términos. Usted es responsable de todo contenido que publique o envíe a través del Sitio.
 
-**4. Registration and Account**
+**4. Registro y Cuenta de Usuario**
 
-Certain areas of the Website may require registration or the creation of an account. You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate, current, and complete. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.
+Determinadas secciones del Sitio pueden requerir el registro o la creación de una cuenta. Usted se compromete a suministrar información veraz, actualizada y completa durante el proceso de registro, y a mantener dicha información exacta, actualizada y completa. Usted es responsable de preservar la confidencialidad de sus credenciales de acceso y de todas las actividades que se realicen bajo su cuenta.
 
-**5. Content and Intellectual Property**
+**5. Contenido y Propiedad Intelectual**
 
-The content on the Website, including text, graphics, logos, images, audio, video, software, and other materials, is owned or licensed by us and is protected by copyright and other intellectual property laws. You may not use, reproduce, or distribute the content without our prior written consent.
+El contenido del Sitio, incluyendo —a título enunciativo— textos, gráficos, logotipos, imágenes, audio, video, software y demás materiales, es de nuestra titularidad o se encuentra licenciado a nuestro favor, y está protegido por las leyes de propiedad intelectual, incluyendo la Ley N° 11.723 de Propiedad Intelectual. Queda prohibida la utilización, reproducción o distribución del contenido sin nuestro consentimiento previo y por escrito.
 
-**6. Third-Party Links**
+**6. Enlaces a Sitios de Terceros**
 
-The Website may contain links to third-party websites or resources. We do not endorse and are not responsible for the content, products, or services provided by third parties. Your use of such websites is at your own risk.
+El Sitio puede contener enlaces a sitios web o recursos de terceros. No avalamos ni asumimos responsabilidad alguna por el contenido, los productos o los servicios ofrecidos por terceros. El uso que usted haga de dichos sitios será por su cuenta y riesgo.
 
-**7. Termination**
+**7. Terminación**
 
-We may, at our sole discretion, terminate or suspend your access to the Website at any time and for any reason, without notice.
+Podremos, a nuestra sola discreción, suspender o dar por terminado su acceso al Sitio en cualquier momento, mediando notificación fehaciente cuando la legislación aplicable así lo exija, en particular cuando se trate de consumidores. En relaciones de consumo, la terminación se ajustará a lo dispuesto por la Ley de Defensa del Consumidor N° 24.240 y sus normas complementarias.
 
-**8. Disclaimer**
+**8. Exclusión de Garantías**
 
-The Website and its content are provided on an "as is" and "as available" basis. We make no warranties or representations about the accuracy or completeness of the content. We do not guarantee that the Website will be error-free or uninterrupted.
+El Sitio y su contenido se proporcionan “tal cual” y “según disponibilidad”. No otorgamos garantía ni declaración alguna sobre la exactitud, integridad o actualidad del contenido. No garantizamos que el Sitio esté libre de errores o que funcione de manera ininterrumpida. La presente cláusula no excluye las garantías legales que, conforme a la legislación argentina, resultan imperativas en las relaciones de consumo.
 
-**9. Limitation of Liability**
+**9. Limitación de Responsabilidad**
 
-To the fullest extent permitted by law, we shall not be liable for any direct, indirect, incidental, special, consequential, or exemplary damages, including but not limited to damages for loss of profits, goodwill, use, data, or other intangible losses, arising out of or in connection with the use or inability to use the Website.
+En la máxima medida permitida por la ley aplicable, no seremos responsables por daños directos, indirectos, incidentales, especiales, consecuentes o punitivos, incluyendo —sin limitación— la pérdida de ganancias, clientela, uso, datos u otras pérdidas intangibles, que deriven o se relacionen con el uso o la imposibilidad de usar el Sitio. No obstante, esta limitación no afectará la responsabilidad por dolo o culpa grave, ni los derechos irrenunciables que la Ley de Defensa del Consumidor N° 24.240 y demás normas imperativas argentinas reconocen a los consumidores.
 
-**10. Governing Law**
+**10. Legislación Aplicable y Jurisdicción**
 
-These Terms are governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to its conflict of laws principles. Any disputes arising under these Terms shall be subject to the exclusive jurisdiction of the courts of [Your Jurisdiction].
+Estos Términos se rigen e interpretan de acuerdo con las leyes de la República Argentina, excluyendo sus normas sobre conflicto de leyes. Toda controversia derivada de estos Términos será sometida a la jurisdicción de los tribunales ordinarios con competencia en la Ciudad Autónoma de Buenos Aires. En el caso de que usted revista la condición de consumidor de acuerdo con la legislación argentina, será también competente el tribunal correspondiente a su domicilio, conforme lo establece el artículo 36 de la Ley N° 24.240.
 
-_Thank you for reading our Terms of Service. By using the Website, you agree to be bound by these Terms._
+_El uso del Sitio implica la aceptación de estos Términos y Condiciones. Si tiene alguna consulta, no dude en contactarnos._
