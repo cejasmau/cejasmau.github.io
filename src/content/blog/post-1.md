@@ -1,6 +1,6 @@
 ---
 title: Narrar lo desconocido
-excerpt: El arte de contar historias y el lente a través del cual vemos el mundo.
+excerpt: El arte de contar historias y el lente a través del cual vemos el mundo. La transformación de cifras abstractas en narraciones a partir del Indice de Salarios (INDEC Argentina) y d3.js.
 publishDate: 'June 27 2026'
 isFeatured: true
 tags:
