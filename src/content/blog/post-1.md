@@ -1,7 +1,7 @@
 ---
 title: Narrar lo desconocido
 excerpt: El arte de contar historias y el lente a través del cual vemos el mundo.
-publishDate: 'Jun 27 2026'
+publishDate: 'June 27 2026'
 tags:
   - Narración
 seo:
