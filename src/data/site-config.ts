@@ -7,7 +7,7 @@ const siteConfig: SiteConfig = {
         src: avatar,
         alt: 'Mauro Cejas Marcovecchio'
     },
-    title: 'Mauro Cejas Marcovecchio',
+    title: 'Economía, ciencia de datos y otros cantares',
     subtitle: 'en las vidrieras no lo vas a encontrar',
     description: 'Economía, ciencia de datos y otros cantares',
     image: {
